@@ -6,15 +6,26 @@ router.get('/', async function(req, res, next){
 res.send(await usersRepo.getAllUsers());
 });
 
-router.get('/admins', async function(req, res, next) {
-  res.send(await usersRepo.getAdmins())
-  });
-
 // /* GET users with pagination. */
 // router.get('/?limit=10&offset=0', async function(req, res, next) {
 //   res.send(await usersRepo.getUsers(req.params.offset,req.params.limit))
 //   });
   
+//Get Admins Listning
+router.get('/admins', async function(req, res, next) {
+  res.send(await usersRepo.getAdmins())
+  });
+
+//Get Authors Listning
+router.get('/authors', async function(req, res, next) {
+  res.send(await usersRepo.getAuthors())
+  });
+
+//Get Guests Listning
+router.get('/guests', async function(req, res, next) {
+  res.send(await usersRepo.getGuests())
+  });
+
 
   
 /* GET user by id. */
