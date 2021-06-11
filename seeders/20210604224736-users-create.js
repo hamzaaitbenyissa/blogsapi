@@ -4,17 +4,7 @@ const faker=require("faker")
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-
-        /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-    //let's creat an array for storing fake data first
+    
     const data=[];
     const roles=["admin","guest","author"];
     for(let i=0;i<20;i++){
