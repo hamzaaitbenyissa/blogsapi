@@ -15,20 +15,29 @@ module.exports = {
     
     getArticle: (id)=>{        
     return Article.findOne({
-    where: {
-    id: id
-    }})},
+    where: {id: id}
+    })},
 
     addArticle : (newarticle)=> {
         Article.create(newarticle)
      },
 
-    updateArticle: (id)=>{  
-        Article.update({where: {id:id}})
+    updateArticle: (newdata,id)=>{  
+        Article.update(newdata,{where: {id:id}})
      },
 
     deleteArticle: (id)=>{
         Article.destroy({where: { id: id }})
      },
+
+     getArticlesofuser: (id)=>{        
+        return Article.findAll({
+        where: {UserId: id}
+        })},
+     
+    getPublishedArticles: ()=>{        
+        return Article.findAll({
+            where: {published: 1}}
+            )},
 
 }

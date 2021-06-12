@@ -5,13 +5,12 @@ module.exports = {
 		return Comment.findAll();
 },
 
-    getComments: (offset = 0, limit = 10)=> {
+    getComments: (offset1 = 0, limit1 = 10)=> {
     return Comment.findAll({
-    limit :limit,
-    offset: offset,
-    });        
+    limit :limit1,
+    offset: offset1,
+    });
     },
-
     
     getComment: (id)=>{        
     return Comment.findOne({
@@ -19,16 +18,23 @@ module.exports = {
     id: id
     }})},
 
-    addComment : (newComment)=> {
-        Comment.create(newComment)
+    getCommentByEmail: (email)=> {
+     return Comment.findOne({
+      where : {email:email}  
+     })   
      },
 
-    updateComment: (id)=>{  
-        Comment.update({where: {id:id}})
+    addComment : (newComment)=> {
+    Comment.create(newComment)
+     },
+
+    updateComment: (id,newdata)=>{  
+    Comment.update(newdata,{where: {id:id}})
      },
 
     deleteComment: (id)=>{
         Comment.destroy({where: { id: id }})
      },
+    
 
 }

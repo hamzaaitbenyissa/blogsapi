@@ -5,10 +5,10 @@ module.exports = {
 		return User.findAll();
 },
 
-    getUsers: (offset = 0, limit = 10)=> {
+    getUsers: (offset1 = 0, limit1 = 10)=> {
     return User.findAll({
-    limit :limit,
-    offset: offset,
+    limit :limit1,
+    offset: offset1,
     });
     },
 
@@ -46,14 +46,13 @@ module.exports = {
     User.create(newuser)
      },
 
-    updateUser: (id)=>{  
-    User.update({where: {id:id}})
+    updateUser: (id,newdata)=>{  
+    User.update(newdata,{where: {id:id}})
      },
 
     deleteUser: (id)=>{
-        user.destroy({where: { id: id }})
+        User.destroy({where: { id: id }})
      },
-    
     
 
 }

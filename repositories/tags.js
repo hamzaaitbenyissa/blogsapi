@@ -5,30 +5,43 @@ module.exports = {
 		return Tag.findAll();
 },
 
-    getTags: (offset = 0, limit = 10)=> {
+    getTags: (offset1 = 0, limit1 = 10)=> {
     return Tag.findAll({
-    limit :limit,
-    offset: offset,
-    });        
+    limit :limit1,
+    offset: offset1,
+    });
     },
-
-    
+        
     getTag: (id)=>{        
     return Tag.findOne({
     where: {
     id: id
     }})},
 
-    addTag : (newTag)=> {
-        Tag.create(newTag)
+    getTagByEmail: (email)=> {
+     return Tag.findOne({
+      where : {email:email}  
+     })   
      },
 
-    updateTag: (id)=>{  
-        Tag.update({where: {id:id}})
+    addTag : (newTag)=> {
+    Tag.create(newTag)
+     },
+
+    updateTag: (id,newdata)=>{  
+    Tag.update(newdata,{where: {id:id}})
      },
 
     deleteTag: (id)=>{
         Tag.destroy({where: { id: id }})
      },
+
+    //  getTagsofArticle: (id)=>{
+	// 	return Tag.findAll({
+    //     where :{        
+    //     }
+    //     });
+    // },
+    
 
 }
