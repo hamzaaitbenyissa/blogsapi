@@ -53,6 +53,7 @@ module.exports = {
     deleteUser: (id)=>{
         user.destroy({where: { id: id }})
      },
-    // D'autres méthodes jugées utiles
+    
+    
 
 }
