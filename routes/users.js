@@ -10,9 +10,9 @@ res.send(await usersRepo.getAllUsers());
 
 /* GET users with pagination. */
 router.get('/pagination/:offset/:limit', async function(req, res, next) {
-  var off=req.params.offset;
-  var lim=req.params.limit;
-  res.send(await usersRepo.getUsers(1/*off*/,5/*lim*/))
+  var off=parseInt(req.params.offset);
+  var lim=parseInt(req.params.limit);
+  res.send(await usersRepo.getUsers(off,lim))
   });
   
 //Get Admins Listning
