@@ -8,9 +8,9 @@ res.send(await commentsRepo.getAllComments());
 
 /* GET Comments with pagination. */
 router.get('/pagination/:offset/:limit', async function(req, res, next) {
-  var off=req.params.offset;
-  var lim=req.params.limit;
-  res.send(await commentsRepo.getComments(0/*off*/,5/*lim*/))
+  var off=parseInt(req.params.offset);
+  var lim=parseInt(req.params.limit);
+  res.send(await commentsRepo.getComments(off,lim))
   });
   
 /* GET Comment by id. */

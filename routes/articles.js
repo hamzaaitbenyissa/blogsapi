@@ -13,9 +13,9 @@ router.get('/published', async function(req, res, next){
 
 /* GET Articles with pagination. */
 router.get('/pagination/:limit/:offset', async function(req, res, next) {
-    var off=req.params.offset;
-    var lim=req.params.limit;
-  res.send(await articlesRepo.getArticles(1/*off*/,5/*lim*/))
+  var off=parseInt(req.params.offset);
+  var lim=parseInt(req.params.limit);
+  res.send(await articlesRepo.getArticles(off,lim))
   });
   
 /* GET Article by id. */

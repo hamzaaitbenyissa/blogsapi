@@ -18,11 +18,6 @@ module.exports = {
     id: id
     }})},
 
-    getCommentByEmail: (email)=> {
-     return Comment.findOne({
-      where : {email:email}  
-     })   
-     },
 
     addComment : (newComment)=> {
     Comment.create(newComment)

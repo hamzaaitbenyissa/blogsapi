@@ -17,13 +17,7 @@ module.exports = {
     where: {
     id: id
     }})},
-
-    getTagByEmail: (email)=> {
-     return Tag.findOne({
-      where : {email:email}  
-     })   
-     },
-
+    
     addTag : (newTag)=> {
     Tag.create(newTag)
      },
@@ -34,14 +28,6 @@ module.exports = {
 
     deleteTag: (id)=>{
         Tag.destroy({where: { id: id }})
-     },
-
-    //  getTagsofArticle: (id)=>{
-	// 	return Tag.findAll({
-    //     where :{        
-    //     }
-    //     });
-    // },
-    
+     },    
 
 }

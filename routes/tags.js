@@ -8,9 +8,9 @@ res.send(await TagsRepo.getAllTags());
 
 /* GET Tags with pagination. */
 router.get('/pagination/:offset/:limit', async function(req, res, next) {
-  var off=req.params.offset;
-  var lim=req.params.limit;
-  res.send(await TagsRepo.getTags(1/*off*/,5/*lim*/))
+  var off=parseInt(req.params.offset);
+  var lim=parseInt(req.params.limit);
+  res.send(await TagsRepo.getTags(off,lim))
   });
   
 /* GET Tag by id. */
