@@ -1,24 +1,78 @@
 <html>
+
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Blog</title>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="icon" href="./images/BLOG.png">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Jquery cdn -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- specefied theme -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    
+  <!-- minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous">
+  </script>
 
 </head>
 
 <body>
-  <h1>Express Niceeeeee</h1>
-  <p>Welcome to Express</p>
+  <header class="ScriptHeader">
+    <div class="rt-container">
+      <div class="col-rt-12">
+        <div class="rt-heading">
+          <h1>Users</h1>
+        </div>
+      </div>
+    </div>
+  </header> 
+
+  <!-- <button type="button" class="btn btn-primary btn-lg btn-radius" id="myBtn">Pagination</button> -->
+  <section>
+    <div class="rt-container">
+      <div class="col-rt-12">
+        <div class="Scriptcontent">
+          <table id="tableData" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="data"></tbody>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jquery cdn -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  
+  <script src="./javascripts/users.js"> </script>
+
+  <script src="./javascripts/paging.js"></script>
+  
+
+  <script >   
+    $(document).ready(function () {
+
+      setTimeout(function(){
+
+      $('#tableData').paging({
+        limit: 5
+      });
+    },200);
+    });
+  </script>
+  
 </body>
 
 </html>
