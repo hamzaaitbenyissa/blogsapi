@@ -43,7 +43,3 @@ This is a REST Api of a blooging Application using express js framework
 4. Commit your changes (`git commit -am 'Add new feature'`)
 5. Push to the branch (`git push origin feature-branch`)
 6. Create a new Pull Request
-
-## License Information
-
-This project is licensed under the MIT License.
